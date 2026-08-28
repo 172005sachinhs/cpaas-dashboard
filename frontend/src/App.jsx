@@ -575,7 +575,7 @@ function ApiDocumentationPage() {
   };
 
   const codeExamples = {
-    quickstart: `curl -X POST http://localhost:5000/api/sms/send \\
+    quickstart: `curl -X POST https://cpaas-dashboard-production.up.railway.app/api/sms/send \\
   -H "Content-Type: application/json" \\
   -H "x-api-key: YOUR_API_KEY" \\
   -d '{
@@ -585,7 +585,7 @@ function ApiDocumentationPage() {
     "type": "TRANS"
   }'`,
 
-    authentication: `fetch("http://localhost:5000/api/...", {
+    authentication: `fetch("https://cpaas-dashboard-production.up.railway.app/api/...", {
   headers: {
     "x-api-key": "YOUR_API_KEY"
   }
@@ -1377,7 +1377,7 @@ function ApiKeyPage({ onNavigate }) {
   const [saving, setSaving] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
 
-  const API_URL = "http://localhost:5000/api/developer/api-keys";
+  const API_URL = "https://cpaas-dashboard-production.up.railway.app/api/developer/api-keys";
 
   const loadApiKeys = async () => {
     setLoading(true);
@@ -1977,7 +1977,7 @@ function ApiKeyPage({ onNavigate }) {
 <h3>Example</h3>
 
 <pre>
-  {`fetch("http://localhost:5000/api/...", {
+  {`fetch("https://cpaas-dashboard-production.up.railway.app/api/...", {
   headers: {
     "x-api-key": "${
       apiKeys.find(
@@ -2058,7 +2058,7 @@ useEffect(() => {
     const loadHeaderBalance = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/commerce"
+          "https://cpaas-dashboard-production.up.railway.app/api/commerce"
         );
 
         if (!response.ok) return;
@@ -2200,8 +2200,8 @@ useEffect(() => {
 
         const [senderResponse, templateResponse] =
           await Promise.all([
-            fetch("http://localhost:5000/api/sms/sender-ids"),
-            fetch("http://localhost:5000/api/sms/templates")
+            fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/sender-ids"),
+            fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/templates")
           ]);
 
         if (!senderResponse.ok) {
@@ -2531,7 +2531,7 @@ useEffect(() => {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/rcs/sender-ids"
+        "https://cpaas-dashboard-production.up.railway.app/api/rcs/sender-ids"
       );
 
       if (!response.ok) {
@@ -2602,7 +2602,7 @@ useEffect(() => {
   const loadRcsTemplates = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/rcs/templates"
+        "https://cpaas-dashboard-production.up.railway.app/api/rcs/templates"
       );
 
       if (!response.ok) {
@@ -2793,7 +2793,7 @@ useEffect(() => {
     // -----------------------------------------
 
     const response = await fetch(
-      "http://localhost:5000/api/sms/send",
+      "https://cpaas-dashboard-production.up.railway.app/api/sms/send",
       {
         method: "POST",
 
@@ -2971,7 +2971,7 @@ const handleSmsSchedule = async () => {
     );
 
     const response = await fetch(
-      "http://localhost:5000/api/sms/schedule",
+      "https://cpaas-dashboard-production.up.railway.app/api/sms/schedule",
       {
         method: "POST",
         headers: {
@@ -3105,7 +3105,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
   const loadWhatsAppNumbers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/whatsapp/numbers"
+        "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/numbers"
       );
 
       if (!response.ok) {
@@ -3139,7 +3139,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/whatsapp/templates"
+        "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/templates"
       );
 
       if (!response.ok) {
@@ -3215,7 +3215,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/whatsapp/templates",
+        "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/templates",
         {
           method: "POST",
           headers: {
@@ -3271,7 +3271,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     loadWhatsAppNumbers();
 
-    fetch("http://localhost:5000/api/whatsapp/dashboard")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/dashboard")
 
       .then((response) => {
 
@@ -3308,7 +3308,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
     // WhatsApp messages
     // -------------------------------
 
-    fetch("http://localhost:5000/api/whatsapp/messages")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/messages")
 
       .then((response) => {
 
@@ -3347,7 +3347,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     setCampaignsLoading(true);
 
-    fetch("http://localhost:5000/api/whatsapp/campaigns")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns")
 
       .then((response) => {
 
@@ -3392,7 +3392,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     setTemplatesLoading(true);
 
-    fetch("http://localhost:5000/api/whatsapp/templates")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/templates")
 
       .then((response) => {
 
@@ -3437,7 +3437,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 
     setRecipientsLoading(true);
 
-    fetch("http://localhost:5000/api/whatsapp/recipients")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/recipients")
 
       .then((response) => {
 
@@ -3481,7 +3481,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
     setSmsReportsLoading(true);
     setSmsReportsError("");
 
-    fetch("http://localhost:5000/api/sms/messages")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/messages")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch SMS reports");
@@ -3527,7 +3527,7 @@ const [addRecipientsSuccess, setAddRecipientsSuccess] = useState("");
 setSmsLogsLoading(true);
 setSmsLogsError("");
 
-fetch("http://localhost:5000/api/sms/delivery-logs")
+fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/delivery-logs")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Failed to fetch SMS delivery logs");
@@ -3554,7 +3554,7 @@ fetch("http://localhost:5000/api/sms/delivery-logs")
 setSmsClicksLoading(true);
 setSmsClicksError("");
 
-fetch("http://localhost:5000/api/sms/clicks")
+fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/clicks")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Failed to fetch SMS clicks");
@@ -3584,7 +3584,7 @@ fetch("http://localhost:5000/api/sms/clicks")
 
 useEffect(() => {
   const refreshDashboardStats = () => {
-    fetch("http://localhost:5000/api/whatsapp/dashboard")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/dashboard")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to refresh dashboard data");
@@ -3625,7 +3625,7 @@ useEffect(() => {
 
     setSelectedCampaign(null);
 
-    fetch(`http://localhost:5000/api/whatsapp/campaigns/${campaignId}`)
+    fetch(`https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns/${campaignId}`)
 
       .then((response) => {
 
@@ -3684,7 +3684,7 @@ const addRecipientsToCampaign = async () => {
     );
 
     const response = await fetch(
-      `http://localhost:5000/api/whatsapp/campaigns/${selectedCampaign.campaign.id}/recipients`,
+      `https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns/${selectedCampaign.campaign.id}/recipients`,
       {
         method: "POST",
 
@@ -3716,7 +3716,7 @@ const addRecipientsToCampaign = async () => {
     openCampaignDetails(selectedCampaign.campaign.id);
 
     // Refresh campaign list
-    fetch("http://localhost:5000/api/whatsapp/campaigns")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns")
       .then((response) => response.json())
       .then((data) => {
 
@@ -3799,7 +3799,7 @@ const addRecipientsToCampaign = async () => {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/whatsapp/campaigns/${selectedCampaign.campaign.id}/add-recipient`,
+        `https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns/${selectedCampaign.campaign.id}/add-recipient`,
         {
           method: "POST",
           headers: {
@@ -3825,7 +3825,7 @@ const addRecipientsToCampaign = async () => {
       setNewRecipientSuccess("Recipient added successfully.");
       setNewRecipientError("");
 
-      fetch("http://localhost:5000/api/whatsapp/recipients")
+      fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/recipients")
         .then((recipientResponse) => {
           if (!recipientResponse.ok) {
             throw new Error("Failed to refresh recipients");
@@ -3847,7 +3847,7 @@ const addRecipientsToCampaign = async () => {
 
       openCampaignDetails(selectedCampaign.campaign.id);
 
-      fetch("http://localhost:5000/api/whatsapp/campaigns")
+      fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns")
         .then((campaignResponse) => {
           if (!campaignResponse.ok) {
             throw new Error("Failed to refresh campaigns");
@@ -3925,7 +3925,7 @@ const sendCampaign = async () => {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/whatsapp/send",
+      "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/send",
       {
         method: "POST",
         headers: {
@@ -3956,7 +3956,7 @@ const sendCampaign = async () => {
 
     // Refresh campaigns list
     fetch(
-      "http://localhost:5000/api/whatsapp/campaigns"
+      "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns"
     )
       .then((response) => response.json())
       .then((campaignData) => {
@@ -3979,7 +3979,7 @@ const sendCampaign = async () => {
 
     // Refresh delivery logs / messages
     fetch(
-      "http://localhost:5000/api/whatsapp/messages"
+      "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/messages"
     )
       .then((response) => response.json())
       .then((messageData) => {
@@ -3994,7 +3994,7 @@ const sendCampaign = async () => {
 
     // Refresh dashboard statistics
     fetch(
-      "http://localhost:5000/api/whatsapp/dashboard"
+      "https://cpaas-dashboard-production.up.railway.app/api/whatsapp/dashboard"
     )
       .then((response) => response.json())
       .then((dashboardData) => {
@@ -4045,7 +4045,7 @@ const sendCampaign = async () => {
     setCreateCampaignError("");
     setCreateCampaignSuccess("");
 
-    fetch("http://localhost:5000/api/whatsapp/campaigns", {
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/whatsapp/campaigns", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -5882,7 +5882,7 @@ const sendCampaign = async () => {
               try {
 
                 const response = await fetch(
-                  "http://localhost:5000/api/sms/sender-ids",
+                  "https://cpaas-dashboard-production.up.railway.app/api/sms/sender-ids",
                   {
                     method: "POST",
                     headers: {
@@ -5921,7 +5921,7 @@ const sendCampaign = async () => {
                 // Reload Sender IDs from backend
                 const senderResponse =
                   await fetch(
-                    "http://localhost:5000/api/sms/sender-ids"
+                    "https://cpaas-dashboard-production.up.railway.app/api/sms/sender-ids"
                   );
 
                 if (senderResponse.ok) {
@@ -6168,7 +6168,7 @@ const sendCampaign = async () => {
 
           try {
             const response = await fetch(
-              `http://localhost:5000/api/sms/sender-ids/${editingSenderId}`,
+              `https://cpaas-dashboard-production.up.railway.app/api/sms/sender-ids/${editingSenderId}`,
               {
                 method: "PUT",
                 headers: {
@@ -6352,7 +6352,7 @@ const sendCampaign = async () => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/sms/sender-ids/${sender.id}`,
+      `https://cpaas-dashboard-production.up.railway.app/api/sms/sender-ids/${sender.id}`,
       {
         method: "DELETE",
       }
@@ -6594,7 +6594,7 @@ const sendCampaign = async () => {
 
           try {
             const response = await fetch(
-              "http://localhost:5000/api/sms/templates",
+              "https://cpaas-dashboard-production.up.railway.app/api/sms/templates",
               {
                 method: "POST",
                 headers: {
@@ -6636,7 +6636,7 @@ const sendCampaign = async () => {
             // Reload templates from backend
             const templateResponse =
               await fetch(
-                "http://localhost:5000/api/sms/templates"
+                "https://cpaas-dashboard-production.up.railway.app/api/sms/templates"
               );
 
             if (templateResponse.ok) {
@@ -6859,7 +6859,7 @@ const sendCampaign = async () => {
     setSmsReportsLoading(true);
     setSmsReportsError("");
 
-    fetch("http://localhost:5000/api/sms/messages")
+    fetch("https://cpaas-dashboard-production.up.railway.app/api/sms/messages")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch SMS reports");
@@ -9441,8 +9441,8 @@ const sendCampaign = async () => {
   try {
 
     const url = isEditing
-      ? `http://localhost:5000/api/rcs/sender-ids/${editingRcsSenderId}`
-      : "http://localhost:5000/api/rcs/sender-ids";
+      ? `https://cpaas-dashboard-production.up.railway.app/api/rcs/sender-ids/${editingRcsSenderId}`
+      : "https://cpaas-dashboard-production.up.railway.app/api/rcs/sender-ids";
 
     const method =
       isEditing ? "PUT" : "POST";
@@ -9495,7 +9495,7 @@ const sendCampaign = async () => {
 
     // Reload RCS Sender IDs
     const senderResponse = await fetch(
-      "http://localhost:5000/api/rcs/sender-ids"
+      "https://cpaas-dashboard-production.up.railway.app/api/rcs/sender-ids"
     );
 
     const senderData =
@@ -9653,7 +9653,7 @@ const sendCampaign = async () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/rcs/sender-ids/${sender.id}`,
+          `https://cpaas-dashboard-production.up.railway.app/api/rcs/sender-ids/${sender.id}`,
           {
             method: "DELETE",
           }
@@ -9917,7 +9917,7 @@ const sendCampaign = async () => {
 
                             try {
                               const response = await fetch(
-                                `http://localhost:5000/api/rcs/templates/${template.id}`,
+                                `https://cpaas-dashboard-production.up.railway.app/api/rcs/templates/${template.id}`,
                                 { method: "DELETE" }
                               );
 
@@ -10257,8 +10257,8 @@ const sendCampaign = async () => {
 
               try {
                 const url = isEditing
-                  ? `http://localhost:5000/api/rcs/templates/${editingRcsTemplateId}`
-                  : "http://localhost:5000/api/rcs/templates";
+                  ? `https://cpaas-dashboard-production.up.railway.app/api/rcs/templates/${editingRcsTemplateId}`
+                  : "https://cpaas-dashboard-production.up.railway.app/api/rcs/templates";
 
                 const response = await fetch(url, {
                   method: isEditing ? "PUT" : "POST",
@@ -11195,3 +11195,4 @@ const sendCampaign = async () => {
 }
 
 export default App;
+
