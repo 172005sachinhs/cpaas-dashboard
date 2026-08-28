@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import AutomationFlowBuilder from "./AutomationFlowBuilder";
 import RCSBroadcast from "./RCSBroadcast";
-import RCSReport from "./RCSReport";
+import RCSReport from "./rcsReport.jsx";
 import TeamInbox from "./TeamInbox";
 import UserManagement from "./UserManagement";
 import AddressBook from "./AddressBook";
