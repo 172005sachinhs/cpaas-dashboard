@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://cpaas-dashboard-production.up.railway.app";
 
 const NODE_TYPES = {
   start: { title: "Flow Start", icon: "⌘", category: "Trigger" },
@@ -765,3 +765,4 @@ const handleStyle = (side, active) => ({
 });
 
 export default AutomationFlowBuilder;
+

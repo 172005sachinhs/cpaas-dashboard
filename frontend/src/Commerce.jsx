@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://cpaas-dashboard-production.up.railway.app";
 
 export default function Commerce() {
   const [wallet, setWallet] = useState(null);

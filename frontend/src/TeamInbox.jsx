@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://cpaas-dashboard-production.up.railway.app";
 
 const INITIAL_CHATS = [
   [1, "Arvind Ahluwalia", "A", "Hi Sir", "Jan 8, 2026", "10:42 AM", false, "green", "opened"],

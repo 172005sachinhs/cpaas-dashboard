@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-const API_BASE = "http://localhost:5000/api/rcs/broadcasts";
+const API_BASE = "https://cpaas-dashboard-production.up.railway.app/api/rcs/broadcasts";
 
 export default function RCSBroadcast() {
   const [senders, setSenders] = useState([]);
@@ -234,7 +234,7 @@ const handleGetContacts = async () => {
     );
 
     const response = await fetch(
-      "http://localhost:5000/api/rcs/contacts?user_id=1"
+      "https://cpaas-dashboard-production.up.railway.app/api/rcs/contacts?user_id=1"
     );
 
     const data = await response
